@@ -1,0 +1,18 @@
+echo "Enter a number"
+read a
+x=$a
+c=1
+s=0
+while [ $a -ne 0 ]
+do
+b=`expr $a % 10`
+c=`expr $b \* $b \* $b`
+s=`expr $s + $c`
+a=`expr $a / 10`
+done
+if [ $s -eq $x ]
+then
+echo "amstrong"
+else
+echo "not amstrong"
+fi

@@ -1,0 +1,8 @@
+echo 'Enter a number'
+read a
+for i in a
+do
+b=`expr $i \* $i`
+a+1
+echo $b
+done 

@@ -1,0 +1,8 @@
+import java.io.*;
+class Com
+{
+	public static void main(int a ,int b)
+	{
+	System.out.println(a+b);
+	}
+}

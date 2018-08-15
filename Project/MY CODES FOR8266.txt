@@ -1,0 +1,6 @@
+
+http://api.thingspeak.com/update?key=4KMOWOJ0M6YXGL5N&field1=0
+
+http://api.thingspeak.com/channels/165667/feed.json?
+
+http://arduino.esp8266.com/package_esp8266com_index.json

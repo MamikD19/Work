@@ -1,0 +1,35 @@
+#include<stdio.h>
+int arr[20];
+void bs(int l,int u,int s)
+{
+int m;
+if(l<=u)
+{
+m=(l+u)/2;
+if(arr[m]==s)
+{
+printf("the element is present in the position %d\n",m);
+}
+else if(arr[m]>s)
+bs(l,m-1,s);
+else
+bs(m+1,u,s);
+}
+else
+printf("the element not found");
+}
+//main body
+main()
+{
+int low=0,up,search,i;
+printf("Enter the length of the array");
+scanf("%d",&up);
+printf("Enter the element of the array");
+for(i=0;i<=up;i++)
+{
+scanf("%d",&arr[i]);
+}
+printf("Enter the search value");
+scanf("%d",&search);
+bs(low,up,search);
+}

@@ -1,0 +1,89 @@
+#include<iostream>
+#define MAX 5
+int rear=-1,front=-1;
+using namespace std;
+class Queue
+{
+	public:
+	int arr[MAX];
+
+	public:
+	 int Isempty()
+	{
+		if(rear==-1 && front==-1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	int Isfull()
+	{
+		if(rear==MAX-1)
+		return 1;
+		else
+		return 0;
+	}
+	void Insert(int n)
+	{
+		if(Isfull())
+		cout<<"\nQueue is Full\n";
+		else
+		{
+		rear++;
+		arr[rear]=n;
+		cout<<n<<"\nis inserted\n";
+		}
+	}	
+	void Delete()
+	{
+		if(Isempty())
+		cout<<"\nQueue is empty\n";
+		else if(front==0 || front==rear)
+		{
+			front++;
+			cout<<arr[front]<<"\ndeleted\n";
+		}
+		else
+		{
+			front++;
+			cout<<arr[front]<<"\ndeleted\n";
+		}
+	}
+	void Display()
+	{
+		int i;
+		cout<<"\nthe array is \n";
+		for(i=front;i<=rear;i++)
+		cout<<"\n"<<arr[i];
+	}
+};
+main()
+{
+	Queue q;
+	int ch,num;
+	do
+	{
+	cout<<"\n1 for insert 2 for delete 3 for diaplay and ctrl+z to end\n";
+	cin>>ch;
+	switch(ch)
+	{
+		case 1:
+		cout<<"\nEnter the element\n";
+		cin>>num;
+		q.Insert(num);
+		break;
+		case 2:
+		q.Delete();
+		break;
+		case 3:
+		q.Display();
+		break;
+		default:
+		cout<<"Wrong choice";
+		break;
+	}
+	}while(1);
+}

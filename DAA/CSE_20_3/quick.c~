@@ -1,0 +1,42 @@
+#include<stdio.h>
+int arr[20],l,u,i,x,j,q,n,temp;
+//partition
+int partition(l , u)
+{
+x=arr[u];
+i=l-1;
+for(j=l;j<=u-1;j++)
+{
+	if(arr[j]<=x)
+	{
+		i=i+1;
+		temp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=temp;
+	}
+}
+arr[i+1]=arr[u];
+return(i+1);
+}
+void qs(l , u)
+{
+	if(l<u)
+	{
+		q=partition(l,u);
+		qs(l,q-1);
+		qs(q+1,u);
+	}
+}
+//main
+main()
+{
+printf("Enter the number of the array");
+scanf("%d",&n);
+printf("Enter the element of the array");
+for(i=0;i<n;i++)
+	scanf("%d",&arr[i]);
+qs(0,n-1);
+printf("sorted array is");
+for(i=0;i<n;i++)
+	printf("%d",arr[i]);
+}
